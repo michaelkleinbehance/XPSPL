@@ -11,7 +11,7 @@ use prggmr\module\unittest as unittest;
 unittest\suite(function(){
 
     $this->setup(function(){
-        $this->engine = new prggmr\Engine();
+        $this->engine = new prggmr\Engine(true, true);
     });
 
     $this->teardown(function(){
@@ -26,5 +26,21 @@ unittest\suite(function(){
         $engine = new \prggmr\Engine(false);
         $engine->signal('test');
         $this->count($engine->event_history(), 0);
-    }, 'Test construction no history');
+    }, 'Construction no history');
+
+    $this->test(function(){
+        $this->engine->signal('test');
+        $this->count($this->engine->event_history(), 1);
+        $this->engine->erase_history();
+        $this->count($this->engine->event_history(), 0);
+    }, 'Engine history management');
+
+    $this->test(function(){
+        $this->engine->handle('test', function(){});
+        $this->false($this->engine->has_signal_exhausted('test'));
+        $this->engine->signal('test');
+        $queue = $this->engine->search_signals('test');
+        $this->instanceof($queue, new \prggmr\Queue());
+        // $this->count($queue->storage(), 0);
+    }, 'Automatic exhaustion');
 });
