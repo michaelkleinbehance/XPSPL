@@ -3,7 +3,7 @@
  * Non-Blocking Server
  */
 prggmr\load_module('socket');
-var_dump(prggmr\load_module('time'));
+prggmr\load_module('time');
 
 $server = new prggmr\module\socket\server\Select("0.0.0.0:1337");
 
@@ -22,8 +22,15 @@ $server->on_connect(new prggmr\Handle(function(){
             });
         }
     }
-    $this->write("You sent me the following".PHP_EOL);
-    $this->write($this->read());
+    // $this->write("You sent me the following".PHP_EOL);
+    // var_dump()
+    $http_request = new HttpMessage($this->read());
+    var_dump($http_request->getBody());
+    // $headers = http_parse_message($read);
+    // $cookies = http_parse_cookie($headers->headers['Cookie']);
+    // $post = http_parse_post_params(http_parse_params($headers->body));
+    // $content = [$headers, $post, $cookies];
+    // $this->write(json_encode($content));
 }, null));
 
 // // On Disconnect
@@ -36,6 +43,44 @@ prggmr\handle($server, function(){
     echo "Server is running at ".$this->get_address().PHP_EOL;
 });
 
-prggmr\module\time\interval(1, function() use ($server){
-    echo $server->count.PHP_EOL;
-}, prggmr\engine\idle\Time::SECONDS);
+/**
+ * Parses an HTTP
+ */
+
+/**
+ * Parses the HTTP Request POST Body into an array.
+ * 
+ * @param  object  $object  HTTP Request Body
+ * 
+ * @return   array
+ */
+function http_parse_post_params($object)
+{
+    if (!isset($object->params)) {
+        return [];
+    }
+    $params = [];
+    $param = false;
+    $param_data = false;
+    $has = false;
+    while(current($object->params) !== false) {
+        $_v = current($object->params);
+        if ($_v == 'form-data') {
+            $param = next($object->params)['name'];
+        } elseif (false !== $param) {
+            if ($_v == '') {
+                if ($has) {
+                    $params[$param] = $param_data;
+                    $param = false;
+                    $has = false;
+                    $param_data = '';
+                }
+            } else {
+                $has = true;
+                $param_data .= $_v;
+            }
+        }
+        next($object->params);
+    }
+    return $params;
+}

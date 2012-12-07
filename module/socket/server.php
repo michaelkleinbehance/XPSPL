@@ -7,9 +7,9 @@ namespace prggmr\module\socket;
  */
 
 /**
- * Socket class is used for creating, reading and writing to sockets.
+ * Server class is used for creating network servers.
  */
-trait Socket {
+trait Server {
 
     /**
      * The socket connection.

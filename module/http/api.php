@@ -27,3 +27,17 @@ function uri_request($uri, $function, $method = null, $event = null) {
         $uri, $method, $event
     ), $function);
 }
+
+/**
+ * Creates a new HTTP Server.
+ *
+ * @param  string  $address  Address to connect.
+ * @param  callback  $callback  Function to call on connect.
+ *
+ * @return  object  \prggmr\module\http\Server
+ */
+function server($address, $callback) {
+    $server = new http\Server($address);
+    \prggmr\handle($server, $callback);
+    return $server;
+}

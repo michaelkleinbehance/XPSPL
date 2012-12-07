@@ -14,7 +14,7 @@ use \prggmr\module\socket as socket;
  */
 class Select extends \prggmr\signal\Complex {
 
-    use socket\Socket;
+    use socket\Server;
 
     /**
      * Connection signal.
@@ -88,7 +88,7 @@ class Select extends \prggmr\signal\Complex {
         }, null, PHP_INT_MAX));
 
         $this->on_disconnect(new \prggmr\Handle(function(){
-            stream_socket_shutdown($this->get_socket(), STREAM_SHUT_RDWR);
+            fclose($this->get_socket());
         }, null, PHP_INT_MAX));
 
         parent::__construct();
@@ -171,10 +171,11 @@ class Select extends \prggmr\signal\Complex {
                     }
                 }
             }
-            if (false !== $socket = @stream_socket_accept($this->_socket, $time)) {
+            if (false !== $socket = stream_socket_accept($this->_socket, $time)) {
+                socket_set_nonblock($socket);
                 $this->_routine->add_signal(
                     $this->_connect,
-                    new socket\event\Connect($socket, $this)
+                    $this->_get_connection_event($socket)
                 );
             }
         }));
@@ -190,6 +191,9 @@ class Select extends \prggmr\signal\Complex {
      */
     public function on_connect($function)
     {
+        if (!$function instanceof \prggmr\Handle) {
+            $function = new \prggmr\Handle($function, null);
+        }
         return $this->_engine->handle(
             $this->_connect, $function
         );
@@ -204,6 +208,9 @@ class Select extends \prggmr\signal\Complex {
      */
     public function on_disconnect($function)
     {
+        if (!$function instanceof \prggmr\Handle) {
+            $function = new \prggmr\Handle($function, null);
+        }
         return $this->_engine->handle(
             $this->_disconnect, $function
         );
@@ -242,5 +249,15 @@ class Select extends \prggmr\signal\Complex {
     public function get_address(/* ... */)
     {
         return $this->_address;
+    }
+
+    /**
+     * Returns a new event for connection.
+     *
+     * @return  object
+     */
+    protected function _get_connection_event($socket)
+    {
+        return new socket\event\Connect($socket, $this);
     }
 }
