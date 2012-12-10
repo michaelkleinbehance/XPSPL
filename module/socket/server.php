@@ -49,7 +49,8 @@ trait Server {
      */
     public function write($string)
     {
-        return stream_socket_sendto($this->_socket, $string);
+        echo "WRITE $string";
+        return socket_write($this->_socket, $string);
     }
 
     /**
@@ -63,7 +64,7 @@ trait Server {
      */
     public function read($length = 1048576, $flags = 0) 
     {
-        return stream_socket_recvfrom($this->_socket, $length, $flags);
+        return socket_read($this->_socket, $length, $flags);
     }
 
     /**
@@ -75,6 +76,16 @@ trait Server {
      */
     public function disconnect($how = STREAM_SHUT_RDWR)
     {
-        return stream_socket_shutdown($this->_socket, $how);
+        return fclose($this->_socket, $how);
+    }
+
+    /**
+     * Returns the server signal.
+     *
+     * @return  object
+     */
+    public function get_server(/* ... */)
+    {
+        return $this->server;
     }
 }

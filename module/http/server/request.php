@@ -14,17 +14,12 @@ define('HTTP_DELIM', "\r\n\r\n");
  *
  * @depends  PECL HTTP
  */
-class Request {
+class Request extends \HTTPMessage {
 
     /**
      * HTTP Post Vars
      */
     protected $_post = [];
-
-    /**
-     * HTTP Request Data
-     */
-    protected $_request = null;
 
     /**
      * Constructs a new HTTP Request
@@ -33,8 +28,9 @@ class Request {
      */
     public function __construct($string)
     {
+        parent::__construct($string);
         $this->_request = http_parse_message($string);
-        if ($this->_request->requestMethod === HTTP_POST) {
+        if ($this->getRequestMethod() === HTTP_POST) {
             $this->_parse_post_body();
         }
     }

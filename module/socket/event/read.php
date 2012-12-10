@@ -7,9 +7,9 @@ namespace prggmr\module\socket\event;
  */
 
 /**
- * Socket connection event.
+ * Socket read event.
  */
-class Connect extends \prggmr\Event {
+class Read extends \prggmr\Event {
     
     use \prggmr\module\socket\Server;
 
@@ -21,7 +21,7 @@ class Connect extends \prggmr\Event {
     public $server = null;
 
     /**
-     * Constructs a new connection event.
+     * Constructs a new read event.
      *
      * @param  resource  $socket  Socket that connected
      * @param  object  $server  Socket server object
@@ -34,17 +34,5 @@ class Connect extends \prggmr\Event {
         $this->server = $server;
         $this->_socket = $socket;
         return parent::__construct($ttl);
-    }
-
-    /**
-     * Signals the disconnection of this socket.
-     *
-     * @param  integer  $how
-     *
-     * @return  void
-     */
-    public function disconnect($how = STREAM_SHUT_RDWR)
-    {
-        $this->server->send_disconnect($this->get_socket());
     }
 }

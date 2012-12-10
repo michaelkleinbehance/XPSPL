@@ -11,7 +11,7 @@ namespace prggmr\module\socket\event;
  */
 class Server extends \prggmr\Event {
 
-    use \prggmr\module\socket\Socket;
+    use \prggmr\module\socket\Server;
 
     /**
      * Constructs a new socket event.

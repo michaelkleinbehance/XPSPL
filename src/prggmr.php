@@ -43,7 +43,7 @@ if (PRGGMR_DEBUG) {
 
 // evented exceptions disabled by default
 if (!defined('SIGNAL_ERRORS_EXCEPTIONS')) {
-    define('SIGNAL_ERRORS_EXCEPTIONS', true);
+    define('SIGNAL_ERRORS_EXCEPTIONS', false);
 }
 
 // immediatly removes exhausted handles from the engine
