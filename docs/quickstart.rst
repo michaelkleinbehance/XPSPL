@@ -13,15 +13,17 @@ at a glance and a full day to cover it top to bottom.
 
 This guide covers the following topics,
 
-* Signal Driven Programming (SDP)
-* XPSPL PHP Signal Processing Library
-* The XPSPL programming environment
-* Signals
-* Handles
-* Events
-* Interruptions
-* Complex Signal Processing (CSP) in XPSPL
-* XPSPL Modules
+.. contents::
+
+.. * Signal Driven Programming (SDP)
+.. * XPSPL PHP Signal Processing Library
+.. * The XPSPL programming environment
+.. * Signals
+.. * Handles
+.. * Events
+.. * Interruptions
+.. * Complex Signal Processing (CSP) in XPSPL
+.. * XPSPL Modules
 
 Signal Driven Programming with XPSPL
 ====================================
