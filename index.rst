@@ -1,10 +1,10 @@
 .. prggmr documentation master file, created by
    sphinx-quickstart on Wed Dec 19 20:57:45 2012.
 
-XPSPL - Signal Programming Library
+XPSPL - Signal Processing Library
 ==================================
 
-XPSPL is a signal programming environment for the PHP programming language.
+XPSPL is a signal processing library that provides a signal programming environment for the PHP programming language.
 
 .. note:: 
 
