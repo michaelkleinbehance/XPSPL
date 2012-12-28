@@ -7,7 +7,7 @@ All installations should be done using the following command
 
 .. code-block:: console
 
-    curl -s raw.github.com/prggmr/xpspl/download | sh
+    curl -s https://raw.github.com/prggmr/xpspl/download | sh
 
 .. note::
 
