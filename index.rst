@@ -32,8 +32,8 @@ Contents
    :maxdepth: 3
    :glob:
 
-   docs/quickstart
    docs/install
+   docs/quickstart
    docs/configuration
 
 Indices and tables
