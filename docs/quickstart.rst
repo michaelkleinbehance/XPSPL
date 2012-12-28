@@ -12,16 +12,6 @@ This guide covers the following topics,
 
 .. contents::
 
-.. * Signal Driven Programming (SDP)
-.. * XPSPL PHP Signal Processing Library
-.. * The XPSPL programming environment
-.. * Signals
-.. * Handles
-.. * Events
-.. * Interruptions
-.. * Complex Signal Processing (CSP) in XPSPL
-.. * XPSPL Modules
-
 Signal Driven Programming with XPSPL
 ====================================
 
@@ -63,7 +53,7 @@ ________
 These examples are not real world and are for informational purposes only.
 
 Echo Server
-___________
+%%%%%%%%%%%
 
 This example is a network server that echos the client back it's own data it 
 sent.
@@ -90,7 +80,7 @@ sent.
    }));
 
 Flow Interruptions
-__________________
+%%%%%%%%%%%%%%%%%%
 
 This example demonstrates interruption the flow of a signal.
 
@@ -115,7 +105,7 @@ This example demonstrates interruption the flow of a signal.
     emit(new Foo());
 
 Network Switch Server
-_____________________
+%%%%%%%%%%%%%%%%%%%%%
 
 Let's examine a more real world example.
 
