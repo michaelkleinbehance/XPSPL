@@ -1,10 +1,7 @@
 Quickstart
 ----------
 
-Updated
-_______
-
-   Dec 24, 2012
+*Updated - Dec 28, 2012*
 
 This guide provides an introduction into programming with XPSPL.
 
