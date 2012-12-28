@@ -75,17 +75,22 @@ sent.
 
     <?php
     /**
-     * Load the networking module.
-     */
-    load_module('network');
-
-    $connection = network\connect('0.0.0.0:1337');
-
-    $connection->on_client(function(network\Client $client){
-        $client->write($client->data);
-        $client->disconnect();
-        return false;
-    });
+    * Echo Server
+    *
+    * This example demonstrates a simple echo server that spits back anything that
+    * was sent and then disconnects.
+    */
+   import('network');
+   
+   $socket = network\connect('0.0.0.0', ['port' => '1337'], function(){
+       echo "Server Running on " . $this->socket->get_address() . PHP_EOL;
+   });
+   
+   $socket->on_client(null_exhaust(function(){
+       echo "Connection " . PHP_EOL;
+       $this->socket->write($this->socket->read());
+       $this->socket->disconnect();
+   }));
 
 Flow Interruptions
 __________________
