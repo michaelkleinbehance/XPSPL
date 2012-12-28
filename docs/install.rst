@@ -11,7 +11,9 @@ XPSPL requires  **>= PHP 5.4**.
 Install
 =======
 
-XPSPL installation is over the network with a `CLI script`__.
+XPSPL installation is over the network with a CLI script_.
+
+.. _script: https://raw.github.com/prggmr/xpspl/master/install
 
 The installation requires the **CURL** and **ZIP** libraries.
 
