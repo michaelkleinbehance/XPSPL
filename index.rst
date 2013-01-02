@@ -13,6 +13,13 @@ XPSPL is a signal processing library that provides a signal programming environm
     If you are comfortable analyzing code enjoy the library and contribute to 
     the documentation to help those that come after us.
 
+Source
+------
+
+XPSPL is hosted on Github_.
+
+.. _Github: https://github.com/prggmr/XPSPL
+
 Author
 ------
 
