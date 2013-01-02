@@ -226,7 +226,9 @@ Contributions for these features are always appreciated.
 Performance
 -----------
 
-XPSPL performance well when using less than 10,000 signals.
+XPSPL performance well when using less than 10,000 signals, once pushed over performance declines at a steady rate.
+
+The following performance test was generated on a 2.7GHZ i5 processor.
 
 .. raw:: html
 
