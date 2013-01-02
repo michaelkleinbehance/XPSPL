@@ -223,6 +223,55 @@ A suitable epoll, kqueue and poll module is planned but requires funding.
 
 Contributions for these features are always appreciated.
 
+Performance
+-----------
+
+XPSPL performance well when using less than 10,000 signals.
+
+.. raw:: html
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var sig_inst = [['Time', 'Signals Installed']];
+        var sig_emit = [['Time', 'Signals Emitted']];
+        sig_emit.push([1.7881393432617E-5, 2]);
+        sig_emit.push([3.4093856811523E-5, 4]);
+        sig_emit.push([6.4849853515625E-5, 8]);
+        sig_emit.push([0.0032219886779785, 16]);
+        sig_emit.push([0.00026106834411621, 32]);
+        sig_emit.push([0.00056695938110352, 64]);
+        sig_emit.push([0.0010850429534912, 128]);
+        sig_emit.push([0.0021121501922607, 256]);
+        sig_emit.push([0.0044260025024414, 512]);
+        sig_emit.push([0.0083489418029785, 1024]);
+        sig_emit.push([0.016502857208252, 2048]);
+        sig_emit.push([0.046494007110596, 4096]);
+        sig_inst.push([4.6014785766602E-5, 2]);
+        sig_inst.push([3.4809112548828E-5, 4]);
+        sig_inst.push([6.5088272094727E-5, 8]);
+        sig_inst.push([0.0001671314239502, 16]);
+        sig_inst.push([0.00029587745666504, 32]);
+        sig_inst.push([0.00049591064453125, 64]);
+        sig_inst.push([0.0010058879852295, 128]);
+        sig_inst.push([0.0021650791168213, 256]);
+        sig_inst.push([0.0044491291046143, 512]);
+        sig_inst.push([0.010105848312378, 1024]);
+        sig_inst.push([0.020216941833496, 2048]);
+        sig_inst.push([0.045316934585571, 4096]);
+        var data_1 = google.visualization.arrayToDataTable(sig_emit);
+        var data_2 = google.visualization.arrayToDataTable(sig_inst);
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        chart.draw(data_1, {title: 'Signal Emit'});
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div2'));
+        chart.draw(data_2, {title: 'Signal Install'});
+      }
+    </script>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+    <div id="chart_div2" style="width: 900px; height: 500px;"></div>
+
 API
 ____
 
