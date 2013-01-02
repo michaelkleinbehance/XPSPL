@@ -230,6 +230,8 @@ XPSPL performance well when using less than 10,000 signals, once pushed over per
 
 The following performance test was generated on a 2.7GHZ i5 processor.
 
+Note that all times are in milliseconds.
+
 .. raw:: html
 
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
