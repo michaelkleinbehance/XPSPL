@@ -1,6 +1,5 @@
 .. configuration::
 
-=============
 Configuration
 =============
 

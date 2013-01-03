@@ -23,6 +23,7 @@ Contents
    docs/install
    docs/configuration
    docs/quickstart
+   docs/modules
 
 Source
 ------
