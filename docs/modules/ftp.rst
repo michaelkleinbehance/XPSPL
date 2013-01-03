@@ -83,7 +83,7 @@ ___
 
 All functions and classes are under the ``ftp`` namespace.
 
-.. function:: upload(array $files, array $connection, [callable $callback = null])
+.. function:: ftp\\upload(array $files, array $connection, [callable $callback = null])
 
    Performs a non-blocking FTP upload of the given file(s).
 
