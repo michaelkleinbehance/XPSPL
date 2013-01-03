@@ -23,7 +23,7 @@ Contents
    docs/install
    docs/configuration
    docs/quickstart
-   docs/modules
+   docs/modules/ftp
 
 Source
 ------
