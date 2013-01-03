@@ -1,7 +1,7 @@
 Quickstart
 ----------
 
-*Updated - Dec 28, 2012*
+*Updated - Jan 1st 2013*
 
 This guide provides an introduction into programming with XPSPL.
 
@@ -224,7 +224,7 @@ A suitable epoll, kqueue and poll module is planned but requires funding.
 Contributions for these features are always appreciated.
 
 Performance
------------
+___________
 
 XPSPL performance well when using less than 10,000 signals, once pushed over performance can become erratic.
 
@@ -281,7 +281,7 @@ Note that all times are in milliseconds.
     <div id="chart_div2" style="width: 900px; height: 500px;"></div>
 
 API
-____
+___
 
 XPSPL's API is designed to provide programmers with a natural speaking, 
 intuitive API.
