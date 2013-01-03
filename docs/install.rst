@@ -24,7 +24,11 @@ The installation requires the **CURL** and **ZIP** libraries.
 Updates
 =======
 
-Updates are performed using the same command.
+Once installed updates can be performed by using the ``--update`` option and simply follow the prompt.
+
+.. code-block:: console
+
+    xpspl --update
 
 Windows
 =======
