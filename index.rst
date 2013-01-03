@@ -76,6 +76,10 @@ The following performance tests were generated on a 2.7GHZ i5 processor using th
     <div id="chart_div" style="width: 900px; height: 500px;"></div>
     <div id="chart_div2" style="width: 900px; height: 500px;"></div>
 
+.. note::
+
+   These tests were performed under in the in progress 3 unstable.
+
 Author
 ------
 
