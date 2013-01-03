@@ -298,7 +298,7 @@ Using XPSPL.
     emit('add', new Signal(['num_1' => 1, 'num_2' => 4]));
 
     // Results
-    echo $event->result;
+    5;
 
 Functional
 ^^^^^^^^^^
@@ -331,7 +331,7 @@ Using XPSPL.
     */
     function add($process)
     {
-        return $process->num_1 + $process->num_2'
+        return $process->num_1 + $process->num_2;
     }
 
     signal('add', add);
