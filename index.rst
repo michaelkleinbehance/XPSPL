@@ -13,6 +13,17 @@ XPSPL is a high performance signal processing environment for the PHP programmin
     If you are comfortable analyzing code enjoy the library and contribute to 
     the documentation to help those that come after us.
 
+Contents
+--------
+
+.. toctree::
+   :maxdepth: 3
+   :glob:
+
+   docs/install
+   docs/configuration
+   docs/quickstart
+
 Source
 ------
 
@@ -113,17 +124,6 @@ ___
 
 An IRC channel by irc.freenode.net ``#prggmr``.
 
-
-Contents
---------
-
-.. toctree::
-   :maxdepth: 3
-   :glob:
-
-   docs/install
-   docs/quickstart
-   docs/configuration
 
 Indices and tables
 ------------------
