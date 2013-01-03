@@ -106,6 +106,6 @@ All API functions are under the ``ftp`` namespace.
    :param array $files: Files to upload
    :param array $connection: FTP Connection options
    :param callable $callback: Function to call when upload begins
-   :return object: ftp\SIG_Upload
+   :return object: SIG_Upload
 
 
