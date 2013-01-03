@@ -86,7 +86,7 @@ All API functions are under the ``ftp`` namespace.
    When multiple files are given they will be uploaded simultaneously using 
    separate connections to the given $connection.
 
-   The $callback will be called once the files begin uploading.
+   The ``$callback`` will be called once the files begin uploading.
 
    It is expected that the absolute path to the file will be given, failure to 
    do so will cause unexpected behavior.
@@ -102,6 +102,6 @@ All API functions are under the ``ftp`` namespace.
    :param array $files: Files to upload
    :param array $connection: FTP Connection options
    :param callable $callback: Function to call when upload begins
-   :return object ftp\SIG_Upload:
+   :return object: ftp\SIG_Upload
 
 
