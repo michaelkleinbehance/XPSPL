@@ -20,7 +20,7 @@ Requirements
 PHP
 ^^^
 
-**PHP FTP_ extension** to be installed and enabled. 
+PHP FTP_ extension must be installed and enabled. 
 
 .. _FTP: http://php.net/manual/en/book.ftp.php
 
@@ -55,7 +55,7 @@ Uploading Files
     $server = [
         'hostname' => 'ftp.myhost.com',
         'username' => 'foo',
-        'password' => 'bar
+        'password' => 'bar'
     ];
 
     $upload = ftp\upload($files, $server);
