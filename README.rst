@@ -1,4 +1,4 @@
-prggmr.docs
-===========
+XPSPL Documentation
+===================
 
-The prggmr documentation
+Documentation for XPSPL provided by Readthedocs.org.
