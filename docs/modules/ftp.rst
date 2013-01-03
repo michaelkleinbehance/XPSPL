@@ -88,7 +88,7 @@ All API functions are under the ``ftp`` namespace.
    Performs a non-blocking FTP upload of the given file(s).
 
    When multiple files are given they will be uploaded simultaneously using 
-   separate connections to the given $connection.
+   separate connections to the given ``$connection``.
 
    The ``$callback`` will be called once the files begin uploading.
 
