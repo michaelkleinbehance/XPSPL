@@ -41,6 +41,8 @@ Importing
 %%%%%%%%%
 
 .. code-block:: php
+    
+    <?php
 
     import('ftp');
 
@@ -48,6 +50,8 @@ Uploading Files
 %%%%%%%%%%%%%%%
 
 .. code-block:: php
+    
+    <?php
 
     import('ftp');
 
