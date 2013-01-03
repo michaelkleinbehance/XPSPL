@@ -68,9 +68,9 @@ The following performance tests were generated on a 2.7GHZ i5 processor using th
         var data_1 = google.visualization.arrayToDataTable(sig_emit);
         var data_2 = google.visualization.arrayToDataTable(sig_inst);
         var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-        chart.draw(data_1, {title: 'Signal Emit'});
+        chart.draw(data_1, {title: 'Signals Emitted'});
         var chart = new google.visualization.LineChart(document.getElementById('chart_div2'));
-        chart.draw(data_2, {title: 'Signal Install'});
+        chart.draw(data_2, {title: 'Signals Installed'});
       }
     </script>
     <div id="chart_div" style="width: 900px; height: 500px;"></div>
