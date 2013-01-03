@@ -241,10 +241,10 @@ with your existing system*.
     wont exist.
 
 Samples
-_______
+%%%%%%%
 
 OOP
-___
+^^^
 
 .. code-block:: php
 
@@ -256,7 +256,7 @@ ___
    class Math {
 
       /**
-       * This method will adds two numbers giving.
+       * This method will add the two numbers giving.
        */
       public function add($num_1, $num_2) 
       {
@@ -288,23 +288,20 @@ Using XPSPL.
       /**
        * Receive the add signal.
        */
-      public function add($event)
+      public function add($signal)
       {
-        return $event->num_1 + $this->num_2;
+        return $signal->num_1 + $signal->num_2;
       }
     }
 
     listen(new Math());
-    $event = new Event();
-    $event->num_1 = 1;
-    $event->num_2 = 4;
-    signal('add', $event);
+    emit('add', new Signal(['num_1' => 1, 'num_2' => 4]));
 
     // Results
     echo $event->result;
 
 Functional
-__________
+^^^^^^^^^^
 
 .. code-block:: php
 
@@ -337,19 +334,14 @@ Using XPSPL.
         return $process->num_1 + $process->num_2'
     }
 
-    handle('add', add);
-
-    $event = new Event();
-    $event->num_1 = 1;
-    $event->num_2 = 4;
-    signal('add', $event);
-    echo $event->result;
+    signal('add', add);
+    emit('add', new Signal(['num_1' => 1, 'num_2' => 4]));
 
     // Results
     5
 
 Closures
-________
+^^^^^^^^
 
 .. code-block:: php
 
@@ -370,15 +362,11 @@ Using XPSPL
 
     <?php
 
-    handle('add', function(){
+    signal('add', function(){
         return $this->num_1 + $this->num_2;
     });
 
-    $event = new Event();
-    $event->num_1 = 1;
-    $event->num_2 = 4;
-    signal('add', $event);
-    echo $event->result;
+    emit('add', new Signal(['num_1' => 1, 'num_2' => 4]));
 
     // Results
     5
