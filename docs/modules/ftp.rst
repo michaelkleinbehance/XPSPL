@@ -81,7 +81,7 @@ Uploading Files
 API
 ___
 
-All API functions are under the ``ftp`` namespace.
+All functions and classes are under the ``ftp`` namespace.
 
 .. function:: upload(array $files, array $connection, [callable $callback = null])
 
