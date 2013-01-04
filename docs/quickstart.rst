@@ -86,23 +86,25 @@ This example demonstrates interruption the flow of a signal.
 
 .. code-block:: php
 
-    <?php
-    // When foo is emitted insert bar into the event
-    before(new Foo(), function($event){
-        $event->bar = 'foo';
-    });
-
-    // Handle Foo
-    signal(new Foo(), function($event){
-        echo $event->bar;
-    });
-
-    // After foo is emitted unset bar in the event
-    after(new Foo(), function($event){
-        unset($event->bar);
-    });
-
-    emit(new Foo());
+  <?php
+  
+  // When foo is emitted insert bar into the event
+  before('foo', function(){
+      echo "I RAN";
+      $this->bar = 'foo';
+  });
+  
+  // Handle Foo
+  signal('foo', function(){
+      echo $this->bar;
+  });
+  
+  // After foo is emitted unset bar in the event
+  after('foo', function(){
+      unset($this->bar);
+  });
+  
+  emit('foo');
 
 Network Switch Server
 %%%%%%%%%%%%%%%%%%%%%
