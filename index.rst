@@ -113,7 +113,8 @@ The following performance tests were generated on a 2.7GHZ i5 processor using th
     }
     </script>
     <div id="ProcessesInstalled" style="width: 450px; height: 250px; float:left;"></div><div id="SignalsEmitted" style="width: 450px; height: 250px; float:left;"></div><div id="InterruptionsInstalled" style="width: 450px; height: 250px; float:left;"></div><div id="LoopsPerformed" style="width: 450px; height: 250px; float:left;"></div>
-
+    <div style="clear: both;"></div>
+   
 .. note::
 
    These tests were performed under in the in progress 3 unstable.
