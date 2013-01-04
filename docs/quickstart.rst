@@ -274,8 +274,8 @@ Functional
     // Results
     5
 
-Function XPSPL
-^^^^^^^^^^^^^^
+Functional XPSPL
+^^^^^^^^^^^^^^^^
 
 .. code-block:: php
 
