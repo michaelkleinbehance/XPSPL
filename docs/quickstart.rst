@@ -331,9 +331,6 @@ XPSPL is designed to run applications from within a signal loop.
 
 It ships with the ``xpspl`` command for transparently loading into the environment.
 
-Developers writing an application that will be a long served process will typically want to run their applications 
-using this command.
-
 XPSPL understands the following commands.
 
 =============  ===============
@@ -352,12 +349,12 @@ Command        Performs Action
 How it works
 ____________
 
-With XPSPL your not calling functions or object methods rather your sending signals.
+With XPSPL your not calling functions rather your sending signals.
 
 You develop your application to install signal processors on load using the XPSPL API.
 
-Your application then emits the signals you have installed to, at a very high level this is no different than calling 
-a function, only you do it differently.
+Your application then emits the signals you have installed, at a very high level this is no different than calling 
+a function.
 
 The advantage to this is that unlike a function call a signal is caught, can be interrupted and allows for performing processes 
 using a completely decoupled but shared architecture. 
@@ -365,11 +362,11 @@ using a completely decoupled but shared architecture.
 Starting applications
 _____________________
 
-Applications must be started from a single file loaded with XPSPL.
+Applications are started using a main file loaded with the ``xpspl`` command.
 
 .. code-block:: console
 
-   $ XPSPL main.php
+   $ xpspl main.php
 
 Managing applications
 _____________________
@@ -398,20 +395,20 @@ To do so you can use the following code as your ``index.php``.
    require_once 'XPSPL/src/XPSPL.php';
 
    // This would be your main file.
-   require_once 'your_main_file.php';
+   require_once 'main.php';
    
-   // Start the event loop
-   XPSPL\loop();
+   // Start the signal loop
+   loop();
 
 .. note::
 
-   Notice the last line calls ``XPSPL\loop``? 
+   Notice the last line calls ``loop``? 
 
    This must be the last line of code executed in your application since this will block anything that follows.
 
 
-Signals, Handles and Events
-===========================
+.. Signals, Handles and Events
+.. ===========================
 
 .. Signals
 .. _______
