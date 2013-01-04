@@ -106,94 +106,45 @@ This example demonstrates interruption the flow of a signal.
   
   emit('foo');
 
-Network Switch Server
-%%%%%%%%%%%%%%%%%%%%%
+FTP Upload
+%%%%%%%%%%
 
-Let's examine a more real world example.
-
-Take the following network switch server that transmits start and stop signals 
-from an outside device to an HTML document in a video recording device.
+This examples demonstrates uploading a file to a remote server using FTP.
 
 .. code-block:: php
 
     <?php
-    /**
-     * Load the networking and time modules.
-     */
-    load_module('network');
-    load_module('time');
 
-    // Create a new network connection
-    $connection = network\connect('0.0.0.0:1337');
-
-    // Failsafe awake signal
-    $awake = new time\SIG_Awake(45, TIME_SECONDS);
-
-    // When a connection is received perform the following
-    // * Check the client device type
-    // * If request device check if video connected and emit requested signal 
-    // * If video device set as video device in server
-    $connection->on_client(function($client, $server){
-        // Read in the giving data from connected client
-        $client = json_parse($client->data);
-        // Check the client type
-        // For devices that communicate in
-        if ($client->type === DEVICE_REQUEST) {
-            // Check and error back to device if no video device
-            if ($server->device_video) {
-                $client->write("{error: 'Video device not connected';}");
-                $client->disconnect();
-            }
-            // Check command from device
-            if ($data->start) {
-                emit(new SIG_Video_Device_Start(), $server->device_video);
-                // Failsafe to shutdown the device 45 seconds after connecting
-                if (is_exhausted($awake)) {
-                    time\awake(45, function() use ($server){
-                        signal(
-                            new SIG_Video_Device_Stop(), 
-                            $server->device_video
-                        );
-                    }, TIME_SECONDS);
-                }
-            }
-            if ($data->stop) {
-                emit(new SIG_Video_Device_Stop(), $server->device_video);
-            }
-            $client->disconnect();
-            return;
-        }
-        // Video device we send signals
-        if ($client.type === DEVICE_VIDEO) {
-            $server->device_video = $client;
-        }
-        return;
+    import('ftp');
+    
+    $files = ['/tmp/myfile_1.txt', '/tmp/myfile_2.txt'];
+    $server = [
+        'hostname' => 'ftp.myhost.com',
+        'username' => 'foo',
+        'password' => 'bar'
+    ];
+    
+    $upload = ftp\upload($files, $server, function(){
+        echo "Upload Started";
     });
-
-    /**
-     * Handles the video device start signal
-     */
-    signal(new SIG_Video_Device_Start(), non_exhaust(function($device){
-        $device->write(write_video_cmd(false, true));
+    
+    ftp\complete($upload, null_exhaust(function(){
+        $file = $this->get_file();
+        echo sprintf('%s has uploaded'.PHP_EOL,
+            $file->get_name()
+        );
+    }));
+    
+    ftp\failure($upload, null_exhaust(function(){
+        $file = $this->get_file();
+        echo sprintf('%s has failed to upload'.PHP_EOL,
+            $file->get_name()
+        );
     }));
 
-    /**
-     * Handles the video device stop signal
-     */
-    signal(new SIG_Video_Device_Stop(), non_exhaust(function($device){
-        $device->write(write_video_cmd(false, true));
+    ftp\finished($upload, function(){
+        echo "Upload complete";
     });
-
-    /**
-     * Prepares a JSON message to send the video device
-     */
-    function write_video_cmd($start = false, $stop = false) 
-    {
-        $obj = new stdClass();
-        $obj->start = $start;
-        $obj->stop = $stop;
-        return json_encode($obj);
-    }
 
 XPSPL The PHP Signal Library
 ============================
@@ -376,9 +327,9 @@ Using XPSPL
 Environment
 ===========
 
-XPSPL is designed to run applications from inside an event loop.
+XPSPL is designed to run applications from within a signal loop.
 
-It ships with the ``xpepl`` command for loading applications into its environments.
+It ships with the ``xpspl`` command for transparently loading into the environment.
 
 Developers writing an application that will be a long served process will typically want to run their applications 
 using this command.
@@ -393,12 +344,26 @@ Command        Performs Action
 -p,--passthru  Ignore any subsequent arguments and pass them to the loaded file.
 --test         Run XPSPL's unittests
 --test-cover   Run XPSPL's unittests and include code coverage information (Requires xdebug)
+--update       Update XPSPL to the latest version
 -t/--time      Inform the loop to run for the given amount of milliseconds before shutting down.
 -v/--version   Prints the current version of XPSPL.
 =============  ===============
 
+How it works
+____________
+
+With XPSPL your not calling functions or object methods rather your sending signals.
+
+You develop your application to install signal processors on load using the XPSPL API.
+
+Your application then emits the signals you have installed to, at a very high level this is no different than calling 
+a function, only you do it differently.
+
+The advantage to this is that unlike a function call a signal is caught, can be interrupted and allows for performing processes 
+using a completely decoupled but shared architecture. 
+
 Starting applications
-____________________
+_____________________
 
 Applications must be started from a single file loaded with XPSPL.
 
