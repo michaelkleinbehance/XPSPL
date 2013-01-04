@@ -37,7 +37,7 @@ Performance
 
 The following performance tests were generated on a 2.7GHZ i5 processor using this script_.
 
-.. _script: http://github.com/prggmr/XPSPL/tree/master/examples/performance.php
+.. _script: https://github.com/prggmr/XPSPL/blob/event_removal/examples/performance.php
 
 .. raw:: html
 
