@@ -227,7 +227,8 @@ OOP
    // Results
    5
 
-Using XPSPL.
+OOP XPSPL
+^^^^^^^^^
 
 .. code-block:: php
 
@@ -273,7 +274,8 @@ Functional
     // Results
     5
 
-Using XPSPL.
+Function XPSPL
+^^^^^^^^^^^^^^
 
 .. code-block:: php
 
@@ -309,7 +311,8 @@ Closures
     // Results
     5
 
-Using XPSPL
+Closure XPSPL
+^^^^^^^^^^^^^
 
 .. code-block:: php
 
