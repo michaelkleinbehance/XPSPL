@@ -150,5 +150,6 @@ An IRC channel by irc.freenode.net ``#prggmr``.
 
 Search
 ------
+
 * :ref:`search`
 
