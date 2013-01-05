@@ -117,7 +117,9 @@ The following performance tests were generated on a 2.7GHZ i5 processor using th
    
 .. note::
 
-   These tests were performed under in the in progress 3 unstable.
+   These tests were performed under the event_removal_ branch.
+
+.. _event_removal: http://github.com/prggmr/XPSPL/tree/event_removal
 
 Author
 ------
