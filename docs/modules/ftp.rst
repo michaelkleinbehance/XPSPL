@@ -111,7 +111,7 @@ All functions and classes are under the ``ftp`` namespace.
 
 TEST
 ----
-.. src/api.php generated using docpx on 01/07/13 08:38pm
+.. src/api.php generated using docpx on 01/07/13 08:41pm
 Functions
 ---------
 .. function::  signal
@@ -192,8 +192,7 @@ Functions
 
 .. function::  search_signals
    
-  Searches for a signal in storage returning its storage node if found,
-optionally the index can be returned.
+  Searches for a signal in storage returning its storage node if found,optionally the index can be returned.
 
   :param string|int|object $signal: Signal to search for.
   :param boolean $index: Return the index of the signal.
@@ -225,8 +224,7 @@ optionally the index can be returned.
 
 .. function::  before
    
-  Registers a function to interrupt the signal stack before a signal fires,
-allowing for manipulation of the event before it is passed to processs.
+  Registers a function to interrupt the signal stack before a signal fires,allowing for manipulation of the event before it is passed to processs.
 
   :param string|object $signal: Signal instance or class name
   :param object $process: Process to execute
@@ -235,8 +233,7 @@ allowing for manipulation of the event before it is passed to processs.
 
 .. function::  after
    
-  Registers a function to interrupt the signal stack after a signal fires.
-allowing for manipulation of the event after it is passed to processs.
+  Registers a function to interrupt the signal stack after a signal fires.allowing for manipulation of the event after it is passed to processs.
 
   :param string|object $signal: Signal instance or class name
   :param object $process: Process to execute
@@ -308,9 +305,7 @@ allowing for manipulation of the event after it is passed to processs.
 
 .. function::  dir_include
    
-  Performs a inclusion of the entire directory content, including 
-subdirectories, with the option to start a listener once the file has been 
-included.
+  Performs a inclusion of the entire directory content, including subdirectories, with the option to start a listener once the file has been included.
 
   :param string $dir: Directory to include.
   :param boolean $listen: Start listeners.
@@ -320,8 +315,7 @@ included.
 
 .. function::  $i
    
-  This is some pretty narly code but so far the fastest I have been able 
-to get this to run.
+  This is some pretty narly code but so far the fastest I have been able to get this to run.
 
 
 
