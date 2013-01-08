@@ -23,6 +23,7 @@ Table of Contents
    docs/install
    docs/configuration
    docs/quickstart
+   docs\api
    docs/modules/ftp
 
 Source
