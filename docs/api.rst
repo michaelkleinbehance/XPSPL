@@ -5,7 +5,7 @@ XPSPL API
 
 All functions declared on this page do not fall into any namespace.
 
-.. api.php generated using docpx on 01/08/13 03:49pm
+.. api.php generated using docpx on 01/08/13 03:51pm
 .. function:: signal($signal, $callable)
 
 
@@ -17,9 +17,10 @@ All functions declared on this page do not fall into any namespace.
     :rtype: object|boolean Process, boolean if error
 
 
-    Example
-    -------
-    
+Example
+-------
+
+.. code-block:: php
     signal(new SIG_Startup(), function(){
         echo 'Doing something on startup';
     });
