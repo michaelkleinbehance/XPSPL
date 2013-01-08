@@ -5,7 +5,7 @@ XPSPL API
 
 All functions declared on this page do not fall into any namespace.
 
-.. api.php generated using docpx on 01/08/13 03:53pm
+.. api.php generated using docpx on 01/08/13 03:55pm
 .. function:: signal($signal, $callable)
 
 
@@ -23,6 +23,9 @@ Example
 This example demonstrates how to do something amazing!
 
 .. code-block:: php
+
+    <?php
+
     signal(new SIG_Startup(), function(){
         echo 'Doing something on startup';
     });
@@ -346,6 +349,8 @@ This example demonstrates how to do something amazing!
     Empties the storage, history and clears the current state.
 
     :rtype: void 
+
+
 
 
 
