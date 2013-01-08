@@ -5,7 +5,7 @@ XPSPL API
 
 All functions declared on this page do not fall into any namespace.
 
-.. api.php generated using docpx on 01/08/13 03:25pm
+.. api.php generated using docpx on 01/08/13 03:49pm
 .. function:: signal($signal, $callable)
 
 
@@ -17,14 +17,24 @@ All functions declared on this page do not fall into any namespace.
     :rtype: object|boolean Process, boolean if error
 
 
+    Example
+    -------
+    
+    signal(new SIG_Startup(), function(){
+        echo 'Doing something on startup';
+    });
+
+
+
 .. function:: null_exhaust($process)
 
 
-    Creates a never exhausting signal processr.
+    Creates a never exhausting signal process.
 
     :param callable|process $process: PHP Callable or \XPSPL\Process object.
 
     :rtype: object Process
+
 
 
 .. function:: high_priority($process)
@@ -37,6 +47,7 @@ All functions declared on this page do not fall into any namespace.
     :rtype: object Process
 
 
+
 .. function:: low_priority($process)
 
 
@@ -45,6 +56,7 @@ All functions declared on this page do not fall into any namespace.
     :param callable|process $process: PHP Callable or \XPSPL\Process object.
 
     :rtype: object Process
+
 
 
 .. function:: priority($process, $priority)
@@ -58,6 +70,7 @@ All functions declared on this page do not fall into any namespace.
     :rtype: object Process
 
 
+
 .. function:: remove_process($signal, $process)
 
 
@@ -67,6 +80,7 @@ All functions declared on this page do not fall into any namespace.
     :param object $process: Process instance.
 
     :rtype: void 
+
 
 
 .. function:: emit($signal, [$event = false])
@@ -81,12 +95,14 @@ All functions declared on this page do not fall into any namespace.
     :rtype: object \XPSPL\Event
 
 
+
 .. function:: signal_history()
 
 
     Returns the signal history.
 
     :rtype: array 
+
 
 
 .. function:: register_signal($signal)
@@ -97,6 +113,7 @@ All functions declared on this page do not fall into any namespace.
     :param string|integer|object $signal: Signal
 
     :rtype: object Queue
+
 
 
 .. function:: search_signals($signal, [$index = false])
@@ -111,6 +128,7 @@ All functions declared on this page do not fall into any namespace.
     :rtype: null|array [signal, queue]
 
 
+
 .. function:: loop()
 
 
@@ -119,12 +137,14 @@ All functions declared on this page do not fall into any namespace.
     :rtype: void 
 
 
+
 .. function:: shutdown()
 
 
     Sends the loop the shutdown signal.
 
     :rtype: void 
+
 
 
 .. function:: import($name, [$dir = false])
@@ -136,6 +156,7 @@ All functions declared on this page do not fall into any namespace.
     :param string|null $dir: Location of the module.
 
     :rtype: void 
+
 
 
 .. function:: before($signal, $process)
@@ -150,6 +171,7 @@ All functions declared on this page do not fall into any namespace.
     :rtype: boolean True|False false is failure
 
 
+
 .. function:: after($signal, $process)
 
 
@@ -162,12 +184,14 @@ All functions declared on this page do not fall into any namespace.
     :rtype: boolean True|False false is failure
 
 
+
 .. function:: XPSPL()
 
 
     Returns the XPSPL processor.
 
     :rtype: object XPSPL\Processor
+
 
 
 .. function:: clean([$history = false])
@@ -178,6 +202,7 @@ All functions declared on this page do not fall into any namespace.
     :param boolean $history: Erase any history of the signals cleaned.
 
     :rtype: void 
+
 
 
 .. function:: delete_signal($signal, [$history = false])
@@ -191,6 +216,7 @@ All functions declared on this page do not fall into any namespace.
     :rtype: boolean 
 
 
+
 .. function:: erase_signal_history($signal)
 
 
@@ -201,14 +227,16 @@ All functions declared on this page do not fall into any namespace.
     :rtype: void 
 
 
+
 .. function:: disable_signaled_exceptions([$history = false])
 
 
-    Disables the exception processr.
+    Disables the exception process.
 
     :param boolean $history: Erase any history of exceptions signaled.
 
     :rtype: void 
+
 
 
 .. function:: erase_history()
@@ -217,6 +245,7 @@ All functions declared on this page do not fall into any namespace.
     Cleans out the entire event history.
 
     :rtype: void 
+
 
 
 .. function:: save_signal_history($flag)
@@ -229,6 +258,7 @@ All functions declared on this page do not fall into any namespace.
     :rtype: void 
 
 
+
 .. function:: listen($listener)
 
 
@@ -237,6 +267,7 @@ All functions declared on this page do not fall into any namespace.
     :param object $listener: The event listening object
 
     :rtype: void 
+
 
 
 .. function:: dir_include($dir, [$listen = false, [$path = false]])
@@ -251,6 +282,7 @@ All functions declared on this page do not fall into any namespace.
     :param string $path: Path to ignore when starting listeners.
 
     :rtype: void 
+
 
 
 .. function:: $i()
@@ -271,6 +303,7 @@ All functions declared on this page do not fall into any namespace.
     :rtype: object 
 
 
+
 .. function:: current_event([$offset = false])
 
 
@@ -279,6 +312,7 @@ All functions declared on this page do not fall into any namespace.
     :param integer $offset: In memory hierarchy offset +/-.
 
     :rtype: object 
+
 
 
 .. function:: on_shutdown($function)
@@ -291,6 +325,7 @@ All functions declared on this page do not fall into any namespace.
     :rtype: object \XPSPL\Process
 
 
+
 .. function:: on_start($function)
 
 
@@ -301,12 +336,14 @@ All functions declared on this page do not fall into any namespace.
     :rtype: object \XPSPL\Process
 
 
+
 .. function:: XPSPL_flush()
 
 
     Empties the storage, history and clears the current state.
 
     :rtype: void 
+
 
 
 
