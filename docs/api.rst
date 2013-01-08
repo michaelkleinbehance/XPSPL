@@ -5,7 +5,7 @@ XPSPL API
 
 All functions declared on this page do not fall into any namespace.
 
-.. api.php generated using docpx on 01/08/13 03:55pm
+.. api.php generated using docpx on 01/08/13 04:24pm
 .. function:: signal($signal, $callable)
 
 
@@ -13,13 +13,14 @@ All functions declared on this page do not fall into any namespace.
 
     :param string|integer|object $signal: Signal to attach the process.
     :param object $callable: Callable
+    :param string $name: This does something to!
 
     :rtype: object|boolean Process, boolean if error
 
 
 Example
 -------
-
+ 
 This example demonstrates how to do something amazing!
 
 .. code-block:: php
@@ -29,6 +30,32 @@ This example demonstrates how to do something amazing!
     signal(new SIG_Startup(), function(){
         echo 'Doing something on startup';
     });
+
+Example
+-------
+ 
+This demonstrates how to do something even more amazing!
+
+..code-block::php
+
+    <?php
+
+    signal(new SIG_Shutdown(), null_exhaust(function(){
+        echo "I NEVER EXHAUST!!";
+    }))
+
+Example
+-------
+ 
+This demonstrates how to do something even more amazing!
+
+..code-block::php
+
+    <?php
+
+    signal(new SIG_AS(), null_exhaust(function(){
+        echo "I NEVER EXHAUST!!";
+    }))
 
 
 
@@ -349,6 +376,9 @@ This example demonstrates how to do something amazing!
     Empties the storage, history and clears the current state.
 
     :rtype: void 
+
+
+
 
 
 
