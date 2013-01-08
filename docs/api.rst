@@ -5,7 +5,7 @@ XPSPL API
 
 All functions declared on this page do not fall into any namespace.
 
-.. api.php generated using docpx on 01/08/13 04:24pm
+.. api.php generated using docpx on 01/08/13 04:25pm
 .. function:: signal($signal, $callable)
 
 
@@ -36,7 +36,7 @@ Example
  
 This demonstrates how to do something even more amazing!
 
-..code-block::php
+.. code-block::php
 
     <?php
 
@@ -49,7 +49,7 @@ Example
  
 This demonstrates how to do something even more amazing!
 
-..code-block::php
+.. code-block::php
 
     <?php
 
@@ -376,6 +376,10 @@ This demonstrates how to do something even more amazing!
     Empties the storage, history and clears the current state.
 
     :rtype: void 
+
+
+
+
 
 
 
