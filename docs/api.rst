@@ -5,10 +5,11 @@ XPSPL API
 
 All functions declared on this page do not fall into any namespace.
 
-.. api.php generated using docpx on 01/08/13 01:37pm
-.. function::  signal
+.. api.php generated using docpx on 01/08/13 03:22pm
+.. function:: signal($signal, $callable)
 
-    Creates a new signal process.
+
+    Installs a new signal processor.
 
     :param string|integer|object $signal: Signal to attach the process.
     :param object $callable: Callable
@@ -16,7 +17,8 @@ All functions declared on this page do not fall into any namespace.
     :rtype: object|boolean Process, boolean if error
 
 
-.. function::  null_exhaust
+.. function:: null_exhaust($process)
+
 
     Creates a never exhausting signal processr.
 
@@ -25,7 +27,8 @@ All functions declared on this page do not fall into any namespace.
     :rtype: object Process
 
 
-.. function::  high_priority
+.. function:: high_priority($process)
+
 
     Creates or sets a process with high priority.
 
@@ -34,7 +37,8 @@ All functions declared on this page do not fall into any namespace.
     :rtype: object Process
 
 
-.. function::  low_priority
+.. function:: low_priority($process)
+
 
     Creates or sets a process with low priority.
 
@@ -43,7 +47,8 @@ All functions declared on this page do not fall into any namespace.
     :rtype: object Process
 
 
-.. function::  priority
+.. function:: priority($process, $priority)
+
 
     Sets a process priority.
 
@@ -53,7 +58,8 @@ All functions declared on this page do not fall into any namespace.
     :rtype: object Process
 
 
-.. function::  remove_process
+.. function:: remove_process($signal, $process)
+
 
     Removes an installed signal process.
 
@@ -63,7 +69,8 @@ All functions declared on this page do not fall into any namespace.
     :rtype: void 
 
 
-.. function::  emit
+.. function:: emit($signal, [$event = false])
+
 
     Signals an event.
 
@@ -74,14 +81,16 @@ All functions declared on this page do not fall into any namespace.
     :rtype: object \XPSPL\Event
 
 
-.. function::  signal_history
+.. function:: signal_history()
+
 
     Returns the signal history.
 
     :rtype: array 
 
 
-.. function::  register_signal
+.. function:: register_signal($signal)
+
 
     Registers a signal in the processor.
 
@@ -90,7 +99,8 @@ All functions declared on this page do not fall into any namespace.
     :rtype: object Queue
 
 
-.. function::  search_signals
+.. function:: search_signals($signal, [$index = false])
+
 
     Searches for a signal in storage returning its storage node if found,
     optionally the index can be returned.
@@ -101,21 +111,24 @@ All functions declared on this page do not fall into any namespace.
     :rtype: null|array [signal, queue]
 
 
-.. function::  loop
+.. function:: loop()
+
 
     Starts the XPSPL loop.
 
     :rtype: void 
 
 
-.. function::  shutdown
+.. function:: shutdown()
+
 
     Sends the loop the shutdown signal.
 
     :rtype: void 
 
 
-.. function::  import
+.. function:: import($name, [$dir = false])
+
 
     Import a module.
 
@@ -125,7 +138,8 @@ All functions declared on this page do not fall into any namespace.
     :rtype: void 
 
 
-.. function::  before
+.. function:: before($signal, $process)
+
 
     Registers a function to interrupt the signal stack before a signal fires,
     allowing for manipulation of the event before it is passed to processs.
@@ -136,7 +150,8 @@ All functions declared on this page do not fall into any namespace.
     :rtype: boolean True|False false is failure
 
 
-.. function::  after
+.. function:: after($signal, $process)
+
 
     Registers a function to interrupt the signal stack after a signal fires.
     allowing for manipulation of the event after it is passed to processs.
@@ -147,14 +162,16 @@ All functions declared on this page do not fall into any namespace.
     :rtype: boolean True|False false is failure
 
 
-.. function::  XPSPL
+.. function:: XPSPL()
+
 
     Returns the XPSPL processor.
 
     :rtype: object XPSPL\Processor
 
 
-.. function::  clean
+.. function:: clean([$history = false])
+
 
     Cleans any exhausted signal queues from the processor.
 
@@ -163,7 +180,8 @@ All functions declared on this page do not fall into any namespace.
     :rtype: void 
 
 
-.. function::  delete_signal
+.. function:: delete_signal($signal, [$history = false])
+
 
     Delete a signal from the processor.
 
@@ -173,7 +191,8 @@ All functions declared on this page do not fall into any namespace.
     :rtype: boolean 
 
 
-.. function::  erase_signal_history
+.. function:: erase_signal_history($signal)
+
 
     Erases any history of a signal.
 
@@ -182,7 +201,8 @@ All functions declared on this page do not fall into any namespace.
     :rtype: void 
 
 
-.. function::  disable_signaled_exceptions
+.. function:: disable_signaled_exceptions([$history = false])
+
 
     Disables the exception processr.
 
@@ -191,14 +211,16 @@ All functions declared on this page do not fall into any namespace.
     :rtype: void 
 
 
-.. function::  erase_history
+.. function:: erase_history()
+
 
     Cleans out the entire event history.
 
     :rtype: void 
 
 
-.. function::  save_signal_history
+.. function:: save_signal_history($flag)
+
 
     Sets the flag for storing the event history.
 
@@ -207,7 +229,8 @@ All functions declared on this page do not fall into any namespace.
     :rtype: void 
 
 
-.. function::  listen
+.. function:: listen($listener)
+
 
     Registers a new event listener object in the processor.
 
@@ -216,7 +239,8 @@ All functions declared on this page do not fall into any namespace.
     :rtype: void 
 
 
-.. function::  dir_include
+.. function:: dir_include($dir, [$listen = false, [$path = false]])
+
 
     Performs a inclusion of the entire directory content, including 
     subdirectories, with the option to start a listener once the file has been 
@@ -229,14 +253,16 @@ All functions declared on this page do not fall into any namespace.
     :rtype: void 
 
 
-.. function::  $i
+.. function:: $i()
+
 
     This is some pretty narly code but so far the fastest I have been able 
     to get this to run.
 
 
 
-.. function::  current_signal
+.. function:: current_signal([$offset = false])
+
 
     Returns the current signal in execution.
 
@@ -245,7 +271,8 @@ All functions declared on this page do not fall into any namespace.
     :rtype: object 
 
 
-.. function::  current_event
+.. function:: current_event([$offset = false])
+
 
     Returns the current event in execution.
 
@@ -254,7 +281,8 @@ All functions declared on this page do not fall into any namespace.
     :rtype: object 
 
 
-.. function::  on_shutdown
+.. function:: on_shutdown($function)
+
 
     Call the provided function on processor shutdown.
 
@@ -263,7 +291,8 @@ All functions declared on this page do not fall into any namespace.
     :rtype: object \XPSPL\Process
 
 
-.. function::  on_start
+.. function:: on_start($function)
+
 
     Call the provided function on processor start.
 
@@ -272,11 +301,14 @@ All functions declared on this page do not fall into any namespace.
     :rtype: object \XPSPL\Process
 
 
-.. function::  XPSPL_flush
+.. function:: XPSPL_flush()
+
 
     Empties the storage, history and clears the current state.
 
     :rtype: void 
+
+
 
 
 
