@@ -5,7 +5,7 @@ XPSPL API
 
 All functions declared on this page do not fall into any namespace.
 
-.. api.php generated using docpx on 01/08/13 04:25pm
+.. api.php generated using docpx on 01/08/13 04:26pm
 .. function:: signal($signal, $callable)
 
 
@@ -13,7 +13,6 @@ All functions declared on this page do not fall into any namespace.
 
     :param string|integer|object $signal: Signal to attach the process.
     :param object $callable: Callable
-    :param string $name: This does something to!
 
     :rtype: object|boolean Process, boolean if error
 
@@ -36,7 +35,7 @@ Example
  
 This demonstrates how to do something even more amazing!
 
-.. code-block::php
+.. code-block:: php
 
     <?php
 
@@ -49,7 +48,7 @@ Example
  
 This demonstrates how to do something even more amazing!
 
-.. code-block::php
+.. code-block:: php
 
     <?php
 
