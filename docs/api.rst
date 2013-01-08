@@ -5,7 +5,7 @@ XPSPL API
 
 All functions declared on this page do not fall into any namespace.
 
-.. api.php generated using docpx on 01/08/13 03:51pm
+.. api.php generated using docpx on 01/08/13 03:53pm
 .. function:: signal($signal, $callable)
 
 
@@ -19,6 +19,8 @@ All functions declared on this page do not fall into any namespace.
 
 Example
 -------
+
+This example demonstrates how to do something amazing!
 
 .. code-block:: php
     signal(new SIG_Startup(), function(){
@@ -344,14 +346,6 @@ Example
     Empties the storage, history and clears the current state.
 
     :rtype: void 
-
-
-
-
-
-
-
-
 
 
 
