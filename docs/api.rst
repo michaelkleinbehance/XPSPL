@@ -5,15 +5,15 @@ XPSPL API
 
 All functions declared on this page do not fall into any namespace.
 
-.. api.php generated using docpx on 01/08/13 04:18am
+.. api.php generated using docpx on 01/08/13 01:37pm
 .. function::  signal
 
-    Creates a new signal processr.
+    Creates a new signal process.
 
     :param string|integer|object $signal: Signal to attach the process.
     :param object $callable: Callable
 
-    :return object|boolean Process, boolean if error: 
+    :rtype: object|boolean Process, boolean if error
 
 
 .. function::  null_exhaust
@@ -22,7 +22,7 @@ All functions declared on this page do not fall into any namespace.
 
     :param callable|process $process: PHP Callable or \XPSPL\Process object.
 
-    :return object Process: 
+    :rtype: object Process
 
 
 .. function::  high_priority
@@ -31,7 +31,7 @@ All functions declared on this page do not fall into any namespace.
 
     :param callable|process $process: PHP Callable or \XPSPL\Process object.
 
-    :return object Process: 
+    :rtype: object Process
 
 
 .. function::  low_priority
@@ -40,7 +40,7 @@ All functions declared on this page do not fall into any namespace.
 
     :param callable|process $process: PHP Callable or \XPSPL\Process object.
 
-    :return object Process: 
+    :rtype: object Process
 
 
 .. function::  priority
@@ -50,7 +50,7 @@ All functions declared on this page do not fall into any namespace.
     :param callable|process $process: PHP Callable or \XPSPL\Process object.
     :param integer $priority: Priority
 
-    :return object Process: 
+    :rtype: object Process
 
 
 .. function::  remove_process
@@ -60,7 +60,7 @@ All functions declared on this page do not fall into any namespace.
     :param string|integer|object $signal: Signal process is attached to.
     :param object $process: Process instance.
 
-    :return void : 
+    :rtype: void 
 
 
 .. function::  emit
@@ -71,14 +71,14 @@ All functions declared on this page do not fall into any namespace.
     :param array $vars: Array of variables to pass the processs.
     :param object $event: Event
 
-    :return object \XPSPL\Event: 
+    :rtype: object \XPSPL\Event
 
 
 .. function::  signal_history
 
     Returns the signal history.
 
-    :return array : 
+    :rtype: array 
 
 
 .. function::  register_signal
@@ -87,7 +87,7 @@ All functions declared on this page do not fall into any namespace.
 
     :param string|integer|object $signal: Signal
 
-    :return object Queue: 
+    :rtype: object Queue
 
 
 .. function::  search_signals
@@ -98,21 +98,21 @@ All functions declared on this page do not fall into any namespace.
     :param string|int|object $signal: Signal to search for.
     :param boolean $index: Return the index of the signal.
 
-    :return null|array [signal, queue]: 
+    :rtype: null|array [signal, queue]
 
 
 .. function::  loop
 
     Starts the XPSPL loop.
 
-    :return void : 
+    :rtype: void 
 
 
 .. function::  shutdown
 
     Sends the loop the shutdown signal.
 
-    :return void : 
+    :rtype: void 
 
 
 .. function::  import
@@ -122,7 +122,7 @@ All functions declared on this page do not fall into any namespace.
     :param string $name: Module name.
     :param string|null $dir: Location of the module.
 
-    :return void : 
+    :rtype: void 
 
 
 .. function::  before
@@ -133,7 +133,7 @@ All functions declared on this page do not fall into any namespace.
     :param string|object $signal: Signal instance or class name
     :param object $process: Process to execute
 
-    :return boolean True|False false is failure: 
+    :rtype: boolean True|False false is failure
 
 
 .. function::  after
@@ -144,14 +144,14 @@ All functions declared on this page do not fall into any namespace.
     :param string|object $signal: Signal instance or class name
     :param object $process: Process to execute
 
-    :return boolean True|False false is failure: 
+    :rtype: boolean True|False false is failure
 
 
 .. function::  XPSPL
 
     Returns the XPSPL processor.
 
-    :return object XPSPL\Processor: 
+    :rtype: object XPSPL\Processor
 
 
 .. function::  clean
@@ -160,7 +160,7 @@ All functions declared on this page do not fall into any namespace.
 
     :param boolean $history: Erase any history of the signals cleaned.
 
-    :return void : 
+    :rtype: void 
 
 
 .. function::  delete_signal
@@ -170,7 +170,7 @@ All functions declared on this page do not fall into any namespace.
     :param string|object|int $signal: Signal to delete.
     :param boolean $history: Erase any history of the signal.
 
-    :return boolean : 
+    :rtype: boolean 
 
 
 .. function::  erase_signal_history
@@ -179,7 +179,7 @@ All functions declared on this page do not fall into any namespace.
 
     :param string|object $signal: Signal to be erased from history.
 
-    :return void : 
+    :rtype: void 
 
 
 .. function::  disable_signaled_exceptions
@@ -188,14 +188,14 @@ All functions declared on this page do not fall into any namespace.
 
     :param boolean $history: Erase any history of exceptions signaled.
 
-    :return void : 
+    :rtype: void 
 
 
 .. function::  erase_history
 
     Cleans out the entire event history.
 
-    :return void : 
+    :rtype: void 
 
 
 .. function::  save_signal_history
@@ -204,7 +204,7 @@ All functions declared on this page do not fall into any namespace.
 
     :param boolean $flag: 
 
-    :return void : 
+    :rtype: void 
 
 
 .. function::  listen
@@ -213,7 +213,7 @@ All functions declared on this page do not fall into any namespace.
 
     :param object $listener: The event listening object
 
-    :return void : 
+    :rtype: void 
 
 
 .. function::  dir_include
@@ -226,7 +226,7 @@ All functions declared on this page do not fall into any namespace.
     :param boolean $listen: Start listeners.
     :param string $path: Path to ignore when starting listeners.
 
-    :return void : 
+    :rtype: void 
 
 
 .. function::  $i
@@ -242,7 +242,7 @@ All functions declared on this page do not fall into any namespace.
 
     :param integer $offset: In memory hierarchy offset +/-.
 
-    :return object : 
+    :rtype: object 
 
 
 .. function::  current_event
@@ -251,7 +251,7 @@ All functions declared on this page do not fall into any namespace.
 
     :param integer $offset: In memory hierarchy offset +/-.
 
-    :return object : 
+    :rtype: object 
 
 
 .. function::  on_shutdown
@@ -260,7 +260,7 @@ All functions declared on this page do not fall into any namespace.
 
     :param callable|object $function: Function or process object
 
-    :return object \XPSPL\Process: 
+    :rtype: object \XPSPL\Process
 
 
 .. function::  on_start
@@ -269,13 +269,16 @@ All functions declared on this page do not fall into any namespace.
 
     :param callable|object $function: Function or process object
 
-    :return object \XPSPL\Process: 
+    :rtype: object \XPSPL\Process
 
 
 .. function::  XPSPL_flush
 
     Empties the storage, history and clears the current state.
 
-    :return void : 
+    :rtype: void 
+
+
+
 
 
