@@ -111,14 +111,16 @@ All functions and classes are under the ``ftp`` namespace.
 
 TEST
 ----
-.. api.php generated using docpx on 01/07/13 10:49pm
+.. api.php generated using docpx on 01/08/13 03:45am
 .. function::  signal
    
-    Installs a new signal processor.
+    Creates a new signal processr.
 
     :param string|integer|object $signal: Signal to attach the process.
     :param object $callable: Callable
+
     :return object|boolean: Process, boolean if error
+
 
 
 .. function::  null_exhaust
@@ -126,7 +128,9 @@ TEST
     Creates a never exhausting signal processr.
 
     :param callable|process $process: PHP Callable or \XPSPL\Process object.
+
     :return object: Process
+
 
 
 .. function::  high_priority
@@ -134,7 +138,9 @@ TEST
     Creates or sets a process with high priority.
 
     :param callable|process $process: PHP Callable or \XPSPL\Process object.
+
     :return object: Process
+
 
 
 .. function::  low_priority
@@ -142,7 +148,9 @@ TEST
     Creates or sets a process with low priority.
 
     :param callable|process $process: PHP Callable or \XPSPL\Process object.
+
     :return object: Process
+
 
 
 .. function::  priority
@@ -151,7 +159,9 @@ TEST
 
     :param callable|process $process: PHP Callable or \XPSPL\Process object.
     :param integer $priority: Priority
+
     :return object: Process
+
 
 
 .. function::  remove_process
@@ -160,7 +170,9 @@ TEST
 
     :param string|integer|object $signal: Signal process is attached to.
     :param object $process: Process instance.
+
     :return void: 
+
 
 
 .. function::  emit
@@ -170,7 +182,9 @@ TEST
     :param string|integer|object $signal: Signal or a signal instance.
     :param array $vars: Array of variables to pass the processs.
     :param object $event: Event
+
     :return object: \XPSPL\Event
+
 
 
 .. function::  signal_history
@@ -180,12 +194,15 @@ TEST
     :return array: 
 
 
+
 .. function::  register_signal
    
     Registers a signal in the processor.
 
     :param string|integer|object $signal: Signal
+
     :return object: Queue
+
 
 
 .. function::  search_signals
@@ -195,7 +212,9 @@ TEST
 
     :param string|int|object $signal: Signal to search for.
     :param boolean $index: Return the index of the signal.
+
     :return null|array: [signal, queue]
+
 
 
 .. function::  loop
@@ -205,11 +224,13 @@ TEST
     :return void: 
 
 
+
 .. function::  shutdown
    
     Sends the loop the shutdown signal.
 
     :return void: 
+
 
 
 .. function::  import
@@ -218,7 +239,9 @@ TEST
 
     :param string $name: Module name.
     :param string|null $dir: Location of the module.
+
     :return void: 
+
 
 
 .. function::  before
@@ -228,7 +251,9 @@ TEST
 
     :param string|object $signal: Signal instance or class name
     :param object $process: Process to execute
+
     :return boolean: True|False false is failure
+
 
 
 .. function::  after
@@ -238,7 +263,9 @@ TEST
 
     :param string|object $signal: Signal instance or class name
     :param object $process: Process to execute
+
     :return boolean: True|False false is failure
+
 
 
 .. function::  XPSPL
@@ -248,12 +275,15 @@ TEST
     :return object: XPSPL\Processor
 
 
+
 .. function::  clean
    
     Cleans any exhausted signal queues from the processor.
 
     :param boolean $history: Erase any history of the signals cleaned.
+
     :return void: 
+
 
 
 .. function::  delete_signal
@@ -262,7 +292,9 @@ TEST
 
     :param string|object|int $signal: Signal to delete.
     :param boolean $history: Erase any history of the signal.
+
     :return boolean: 
+
 
 
 .. function::  erase_signal_history
@@ -270,7 +302,9 @@ TEST
     Erases any history of a signal.
 
     :param string|object $signal: Signal to be erased from history.
+
     :return void: 
+
 
 
 .. function::  disable_signaled_exceptions
@@ -278,7 +312,9 @@ TEST
     Disables the exception processr.
 
     :param boolean $history: Erase any history of exceptions signaled.
+
     :return void: 
+
 
 
 .. function::  erase_history
@@ -288,12 +324,15 @@ TEST
     :return void: 
 
 
+
 .. function::  save_signal_history
    
     Sets the flag for storing the event history.
 
     :param boolean $flag: 
+
     :return void: 
+
 
 
 .. function::  listen
@@ -301,7 +340,9 @@ TEST
     Registers a new event listener object in the processor.
 
     :param object $listener: The event listening object
+
     :return void: 
+
 
 
 .. function::  dir_include
@@ -313,7 +354,9 @@ TEST
     :param string $dir: Directory to include.
     :param boolean $listen: Start listeners.
     :param string $path: Path to ignore when starting listeners.
+
     :return void: 
+
 
 
 .. function::  $i
@@ -328,7 +371,9 @@ TEST
     Returns the current signal in execution.
 
     :param integer $offset: In memory hierarchy offset +/-.
+
     :return object: 
+
 
 
 .. function::  current_event
@@ -336,7 +381,9 @@ TEST
     Returns the current event in execution.
 
     :param integer $offset: In memory hierarchy offset +/-.
+
     :return object: 
+
 
 
 .. function::  on_shutdown
@@ -344,7 +391,9 @@ TEST
     Call the provided function on processor shutdown.
 
     :param callable|object $function: Function or process object
+
     :return object: \XPSPL\Process
+
 
 
 .. function::  on_start
@@ -352,7 +401,9 @@ TEST
     Call the provided function on processor start.
 
     :param callable|object $function: Function or process object
+
     :return object: \XPSPL\Process
+
 
 
 .. function::  XPSPL_flush
@@ -360,5 +411,8 @@ TEST
     Empties the storage, history and clears the current state.
 
     :return void: 
+
+
+
 
 
